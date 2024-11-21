@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Track your orders online.">
+    <title>Order Tracking - Online Store</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Online Store</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="cart.html">Cart</a>
+            <a href="checkout.html">Checkout</a>
+            <a href="faq.html">FAQ</a>
+            <a href="order-tracking.html">Order Tracking</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Track Your Order</h2>
+        <form id="tracking-form">
+            <label for="order-id">Enter Your Order ID:</label>
+            <input type="text" id="order-id" name="order-id" placeholder="Order ID" required>
+            <button type="submit">Track Order</button>
+        </form>
+        <div id="tracking-result" style="margin-top: 1rem;">
+            <p>Enter your order ID to track your order status.</p>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Online Store. All rights reserved.</p>
+    </footer>
+    <script>
+        // Handle order tracking form
+        document.getElementById('tracking-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const orderId = document.getElementById('order-id').value.trim();
+            if (orderId) {
+                document.getElementById('tracking-result').innerHTML = `<p>Order ${orderId} is currently being processed. Thank you for your patience.</p>`;
+            } else {
+                document.getElementById('tracking-result').innerHTML = `<p>Please enter a valid Order ID.</p>`;
+            }
+        });
+    </script>
+</body>
+</html>
